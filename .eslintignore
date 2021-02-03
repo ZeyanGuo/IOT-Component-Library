@@ -1,0 +1,8 @@
+packages/**/*.json
+packages/**/*.d.ts
+packages/**/*.js
+packages/**/*.md
+
+public
+dist
+node_modules
