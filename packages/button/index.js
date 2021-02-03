@@ -1,8 +1,7 @@
-import IOTButton from './src/button';
+import IotButton from './src/Button';
 
-/* istanbul ignore next */
-IOTButton.install = function(Vue) {
-  Vue.component(IOTButton.name, IOTButton);
+IotButton.install = function(Vue) {
+  Vue.component(IOTButton.name, IotButton);
 };
 
-export default IOTButton;
+export default IotButton;

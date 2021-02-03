@@ -29,3 +29,6 @@ yarn.lock
 
 #package
 package.lock.json
+
+#storybook
+storybook-static

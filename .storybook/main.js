@@ -9,13 +9,24 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
-  "webpackFinal": async (config, {configType}) => {
+  "webpackFinal": async (config, { configType }) => {
     config.module.rules.push({
       test: /\.scss$/,
       use: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../'),
     });
+    config.module.rules.push({
+      test: /[\/\\]element-ui[\/\\].+\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            ['@vue/cli-plugin-babel/preset']
+          ],
+        }
+      }
+    })
 
     return config;
-  }
+  },
 }

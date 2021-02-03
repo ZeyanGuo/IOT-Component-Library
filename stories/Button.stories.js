@@ -1,7 +1,7 @@
 import IotButton from "@iot-component-library/button";
 
 export default {
-  title: "Example/Button",
+  title: "IOTLIB/Button",
   component: IotButton,
   argTypes: {
     backgroundColor: { control: "color" },

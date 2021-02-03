@@ -1,7 +1,17 @@
+# packages
 packages/**/*.json
 packages/**/*.d.ts
 packages/**/*.js
 packages/**/*.md
+
+# stories
+stories/**/*.json
+stories/**/*.d.ts
+stories/**/*.js
+stories/**/*.md
+stories/**/*.svg
+stories/**/*.css
+stories/**/*.mdx
 
 public
 dist
