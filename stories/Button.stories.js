@@ -8,6 +8,7 @@ export default {
     size: {
       control: { type: "select", options: ["small", "medium", "large"] },
     },
+    onClick: { actions: 'clicked' }
   },
 };
 

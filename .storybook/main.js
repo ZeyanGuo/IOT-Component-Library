@@ -26,7 +26,7 @@ module.exports = {
         }
       }
     })
-
+    config.output.publicPath = process.env.NODE_ENV === 'production' ? '/micrApp/storybook-static' : '/'
     return config;
   },
 }
