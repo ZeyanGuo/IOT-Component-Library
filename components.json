@@ -1,0 +1,4 @@
+{
+  "button": "./packages/button/index.js",
+  "table-multiple-a": "./packages/table-multiple-a/index.js"
+}

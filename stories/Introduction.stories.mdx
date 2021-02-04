@@ -114,14 +114,29 @@ import StackAlt from './assets/stackalt.svg';
   
 `}</style>
 
-# Welcome to Storybook
+# 欢迎使用IOT组件库
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+该组件库是面向信息安全部-IOT前端团队
 
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `src/stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+现阶段我们已经将微应用引用到生产项目中，但是我们还依旧没有一套自己的组件库。
+
+本项目的目的是搭建一套基于`storybook`的团队内部公共组件库。
+
+组件使用`lerna`进行管理，并且已经集成`element-ui`支持，如果您在使用`vue2.x`过程中遇到大量复用的组件，那么你就可以考虑将该组件提取到此组件库中，最终组件将会被打包为`@iot-component-library/**` `npm`包，并提交于私服供大家使用。
+
+## 使用方式
+
+如果需要开发组件，请首先阅读[storybook官方文档](https://storybook.js.org/)。
+
+请保证您明确了以下概念之后再投入组件开发
+
+- stories
+- args
+- paramters
+- decorators
+
+如果您想为我们的组件库添加更多`addons`，请参考官方文档进行操作
+
 
 <div className="subheading">Configure</div>
 

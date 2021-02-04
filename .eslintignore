@@ -15,4 +15,5 @@ stories/**/*.mdx
 
 public
 dist
+lib
 node_modules

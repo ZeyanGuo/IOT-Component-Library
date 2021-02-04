@@ -1,0 +1,15 @@
+  
+{
+  "name": "@iot-component-library/bundle",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.6.10",
+    "element-ui": "^2.13.2"
+  },
+  "dependencies": {
+    "@iot-component-library/table-multiple-a": "^0.0.0",
+    "@iot-component-library/button": "^0.0.0"
+  }
+}

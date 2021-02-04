@@ -23,6 +23,11 @@
       :align="columnAlign"
       :min-width="columnL1Width"
     >
+      <template v-if="item.isSlot" v-slot="scope">
+        <slot :name="item.value" :row="scope.row">
+          {{ scope.row[item.value] }}
+        </slot>
+      </template>
       <el-table-column
         v-for="sub in item.children"
         :key="sub.value"
@@ -31,11 +36,16 @@
         :class-name="item.attrs ? item.attrs.className : ''"
         :label-class-name="item.attrs ? item.attrs.labelClassName : ''"
         :fixed="item.attrs ? item.attrs.fixed : false"
+        :render-header="
+          sub.attrs && sub.attrs.renderHeader
+            ? getRenderHeaderMethod(sub.attrs.renderHeader)
+            : null
+        "
         :align="columnAlign"
         :min-width="columnL2Width"
       >
         <template v-if="sub.isSlot" v-slot="scope">
-          <slot :name="sub.value" :scope="scope">
+          <slot :name="sub.value" :row="scope.row">
             {{ scope.row[sub.value] }}
           </slot>
         </template>
@@ -44,15 +54,8 @@
   </el-table>
 </template>
 <script>
-  import ElTable from "element-ui/packages/table";
-  import ElTableColumn from "element-ui/packages/table-column";
-
   export default {
     name: "iot-table-multiple-a",
-    components: {
-      ElTable,
-      ElTableColumn,
-    },
     props: {
       data: {
         type: Array,
