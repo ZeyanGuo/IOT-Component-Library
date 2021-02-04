@@ -18,6 +18,7 @@ if(typeof window !== 'undefined' && window.Vue){
 
 export default{
   name: "iot component library",
+  install,
   IotButton,
   IotTableMultipleA,
 }
