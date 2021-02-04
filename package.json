@@ -13,6 +13,7 @@
     "build:component": "webpack --config build/webpack.component.js",
     "build:bundle": "webpack --config build/webpack.common.js",
     "build:storybook": "build-storybook",
+    "publish": "lerna publish",
     "lint": "eslint --ext .jsx,.js,.vue {packages,stories}/**",
     "fix": "eslint --fix --ext .jsx,.js,.vue {packages,stories}/**",
     "cz": "git-cz"
