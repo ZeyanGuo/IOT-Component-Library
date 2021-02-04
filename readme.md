@@ -4,7 +4,7 @@
 
 ## 使用组件库
 
-请首先查看[官方文档]()
+请首先查看[官方文档](http://10.12.3.28/micrApp/storybook-static/?path=/story/iotlib-introduction--page)
 
 ```
 npm set "@iot-component-library:registry" http://10.12.3.28:4873/
