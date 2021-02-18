@@ -20,8 +20,8 @@
           ? getRenderHeaderMethod(item.attrs.renderHeader)
           : null
       "
-      :align="columnAlign"
-      :min-width="columnL1Width"
+      :align="item.align ? item.align : columnAlign"
+      :min-width="item.width ? item.width : columnL1Width"
     >
       <template v-if="item.isSlot" v-slot="scope">
         <slot :name="item.value" :row="scope.row">
@@ -41,8 +41,8 @@
             ? getRenderHeaderMethod(sub.attrs.renderHeader)
             : null
         "
-        :align="columnAlign"
-        :min-width="columnL2Width"
+        :align="sub.align ? sub.align : columnAlign"
+        :min-width="sub.width ? sub.width : columnL2Width"
       >
         <template v-if="sub.isSlot" v-slot="scope">
           <slot :name="sub.value" :row="scope.row">
@@ -105,11 +105,25 @@
               renderHeaderMethod = this.renderHeader_tooltip(setting.message);
             }
             break;
+          case "multipleLine":
+            {
+              renderHeaderMethod = this.renderHeader_multipleLine();
+            }
+            break;
           default: {
             renderHeaderMethod = "renderHeader_cutomized";
           }
         }
         return renderHeaderMethod;
+      },
+      renderHeader_multipleLine() {
+        return function (h, { column }) {
+          return h("span", {}, [
+            h("span", {}, column.label.split("|")[0]),
+            h("br"),
+            h("span", {}, column.label.split("|")[1]),
+          ]);
+        };
       },
       renderHeader_tooltip(msg) {
         return function (h, { column }) {

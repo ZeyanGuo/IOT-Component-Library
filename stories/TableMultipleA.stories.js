@@ -74,8 +74,9 @@ TwoLevel.args = {
   form: [
     {
       label: "项目概算",
+      align: 'left',
       children: [
-        { label: "预估项目收入(不含税)", value: "gsIncome" },
+        { label: "预估项目收入(不含税)", value: "gsIncome", align: 'right', width:'600' },
         { label: "项目销售毛利", value: "gsGrossprofit" },
         { label: "项目销售毛利率", value: "gsGrossprofitRate" },
         { label: "项目营业利润", value: "gsProfit" },
@@ -245,6 +246,27 @@ Tooltip.args = {
   },],
   data: [],
 }
+
+export const MultipleLine = Template.bind({});
+MultipleLine.args = {
+  loading: false,
+  columnAlign: "center",
+  columnL1Width: "160",
+  columnL2Width: "160",
+  form: [{
+    label: "实际毛利是否达预期|(换行显示)",
+    value: "grossprofitComplete",
+    attrs: {
+      labelClassName: "el-table__label--basic",
+      className: "el-table__column--pink",
+      renderHeader: {
+        type: "multipleLine",
+      },
+    },
+  },],
+  data: [],
+}
+
 
 export const Slot = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
@@ -452,5 +474,6 @@ Complex.args = {
     },
   },]
 };
+
 
 

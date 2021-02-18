@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "storybook": "npm run bootstrap && start-storybook -p 6006",
+    "start": "npm run bootstrap && start-storybook -p 6006",
     "build": "npm run fix && npm run bootstrap && npm run build:component && npm run build:bundle && npm run build:storybook",
     "build:component": "webpack --config build/webpack.component.js",
     "build:bundle": "webpack --config build/webpack.common.js",
@@ -35,6 +35,7 @@
     "commitizen": "^4.2.3",
     "css-loader": "^5.0.1",
     "cz-conventional-changelog": "^3.3.0",
+    "echarts": "^5.0.2",
     "element-ui": "^2.13.2",
     "eslint": "^7.11.0",
     "eslint-plugin-prettier": "^3.3.1",
