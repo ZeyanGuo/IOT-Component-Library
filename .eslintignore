@@ -1,7 +1,5 @@
 # packages
 packages/**/*.json
-packages/**/*.d.ts
-packages/**/*.js
 packages/**/*.md
 
 # stories

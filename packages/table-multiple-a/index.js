@@ -1,6 +1,6 @@
-import IotTableMultipleA from './src/TableMultipleA'
+import IotTableMultipleA from "./src/TableMultipleA";
 
-IotTableMultipleA.install = function(Vue) {
+IotTableMultipleA.install = function (Vue) {
   Vue.component(IotTableMultipleA.name, IotTableMultipleA);
 };
 
