@@ -8,6 +8,7 @@ pipeline{
     stages {
         stage('build') {
             steps{
+              sh 'npm i yarn -g'
               sh 'yarn install'
               sh 'yarn bootstrap'
               sh 'yarn build'
