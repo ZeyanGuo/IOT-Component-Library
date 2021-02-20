@@ -10,7 +10,7 @@
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && node build/watch.js",
     "start:storybook": "start-storybook -p 6006",
-    "build": "npm run bootstrap && npm run fix && npm run build:component && npm run build:bundle && npm run build:storybook",
+    "build": "npm run bootstrap && npm run build:component && npm run build:bundle && npm run build:storybook",
     "build:component": "webpack --config build/webpack.component.js",
     "build:bundle": "webpack --config build/webpack.common.js",
     "build:storybook": "build-storybook",
