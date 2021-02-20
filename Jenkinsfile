@@ -8,10 +8,10 @@ pipeline{
     stages {
         stage('build') {
             steps{
-              sh 'npm i yarn -g'
-              sh 'yarn install'
-              sh 'yarn bootstrap'
-              sh 'yarn build'
+              sh 'npm i yarn'
+              sh './node_modules/bin/yarn install'
+              sh './node_modules/bin/yarn bootstrap'
+              sh './node_modules/bin/yarn build'
               echo 'build'
             }
         }
