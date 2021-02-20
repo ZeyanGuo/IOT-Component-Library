@@ -10,7 +10,7 @@
     "bootstrap": "lerna bootstrap",
     "start": "lerna bootstrap && node build/watch.js",
     "start:storybook": "start-storybook -p 6006",
-    "build": "npm run bootstrap && npm run build:component && npm run build:bundle && npm run build:storybook",
+    "build": "yarn bootstrap && yarn build:component && yarn build:bundle && yarn build:storybook",
     "build:component": "webpack --config build/webpack.component.js",
     "build:bundle": "webpack --config build/webpack.common.js",
     "build:storybook": "build-storybook",
@@ -87,7 +87,7 @@
   },
   "lint-staged": {
     "*.{,js,jsx,vue}": [
-      "npm run fix"
+      "yarn fix"
     ]
   },
   "husky": {
