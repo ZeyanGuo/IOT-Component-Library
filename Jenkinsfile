@@ -9,6 +9,7 @@ pipeline{
         stage('build') {
             steps{
               sh 'yarn install'
+              sh 'yarn bootstrap'
               sh 'yarn build'
               echo 'build'
             }
