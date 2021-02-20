@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    tools {nodejs "node_15.1.0"}
+    tools {nodejs "nodejs"}
     environment {
        SSH_KEY_FILE="/home/app/scott/scripts/ssh_portal_app"
        SERVER_1="10.12.3.28"
@@ -8,10 +8,9 @@ pipeline{
     stages {
         stage('build') {
             steps{
-              sh 'npm i yarn'
-              sh './node_modules/bin/yarn install'
-              sh './node_modules/bin/yarn bootstrap'
-              sh './node_modules/bin/yarn build'
+              sh 'yarn install'
+              sh 'yarn bootstrap'
+              sh 'yarn build'
               echo 'build'
             }
         }
