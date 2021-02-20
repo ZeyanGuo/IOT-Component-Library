@@ -10,7 +10,9 @@ pipeline{
             steps{
               sh 'yarn install'
               sh 'yarn bootstrap'
-              sh 'yarn build'
+              sh 'yarn build:component'
+              sh 'yarn build:bundle'
+              sh 'yarn build:storybook'
               echo 'build'
             }
         }
