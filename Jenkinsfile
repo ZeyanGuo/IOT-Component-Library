@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    tools {nodejs "node_14"}
+    tools {nodejs "node_15.1.0"}
     environment {
        SSH_KEY_FILE="/home/app/scott/scripts/ssh_portal_app"
        SERVER_1="10.12.3.28"
@@ -9,7 +9,7 @@ pipeline{
         stage('build') {
             steps{
               sh 'npm install'
-              sh 'npm run build:prod'
+              sh 'npm run build'
               echo 'build'
             }
         }
