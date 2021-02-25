@@ -23,7 +23,7 @@ const webpackConfig = {
   performance: {
     hints: false,
   },
-  // stats: "none",
+  stats: "none",
   optimization: {
     minimize: false,
   },
