@@ -8,9 +8,9 @@ const webpackConfig = {
   mode: "production",
   entry: Components,
   output: {
-    path: path.resolve(process.cwd(), "./packages"),
+    path: path.resolve(__dirname, "../packages"),
     publicPath: "/dist/",
-    filename: "[name]/dist/index.js",
+    filename: "./[name]/dist/index.js",
     chunkFilename: "[id].js",
     libraryTarget: "commonjs2",
   },
@@ -23,7 +23,7 @@ const webpackConfig = {
   performance: {
     hints: false,
   },
-  stats: "none",
+  // stats: "none",
   optimization: {
     minimize: false,
   },
@@ -34,6 +34,18 @@ const webpackConfig = {
         include: process.cwd(),
         exclude: config.jsexclude,
         loader: "babel-loader",
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: {
+                  ie: "9",
+                },
+              },
+            ],
+          ],
+        },
       },
       {
         test: /\.vue$/,

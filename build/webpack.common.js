@@ -40,6 +40,18 @@ module.exports = {
         include: process.cwd(),
         exclude: config.jsexclude,
         loader: "babel-loader",
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: {
+                  ie: "9",
+                },
+              },
+            ],
+          ],
+        },
       },
       {
         test: /\.vue$/,
