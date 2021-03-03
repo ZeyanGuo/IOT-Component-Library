@@ -76,7 +76,7 @@ TwoLevel.args = {
       label: "项目概算",
       align: 'left',
       children: [
-        { label: "预估项目收入(不含税)", value: "gsIncome", align: 'right', width:'600' },
+        { label: "预估项目收入(不含税)", value: "gsIncome", align: 'right', width: '600' },
         { label: "项目销售毛利", value: "gsGrossprofit" },
         { label: "项目销售毛利率", value: "gsGrossprofitRate" },
         { label: "项目营业利润", value: "gsProfit" },
@@ -225,6 +225,38 @@ Fixed.args = {
   ]
 }
 
+export const Expend = Template.bind({});
+Expend.args = {
+  loading: false,
+  columnAlign: "center",
+  columnL1Width: "160",
+  columnL2Width: "160",
+  form: [
+    {
+      label: "部门",
+      value: "deptName",
+    },
+    {
+      label: "团队",
+      value: "teamName",
+    },
+  ],
+  data: [
+    {
+      id: "1",
+      deptName: "部门1",
+      teamName: "团队1",
+      children: [
+        {
+          id: "2",
+          deptName: "部门2",
+          teamName: "团队2",
+        }
+      ]
+    }
+  ]
+}
+
 export const Tooltip = Template.bind({});
 Tooltip.args = {
   loading: false,
@@ -313,7 +345,7 @@ Slot.args = {
     label: "运营成本A",
     value: "zxOperateCostA",
     isSlot: true
-  },{
+  }, {
     label: "实际执行",
     children: [
       { label: "运营成本", value: "zxOperateCost", isSlot: true },
