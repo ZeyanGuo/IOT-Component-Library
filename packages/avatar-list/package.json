@@ -1,0 +1,10 @@
+{
+  "name": "@iot-component-library/avatar-list",
+  "version": "0.0.6",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "element-ui": "^2.13.2",
+    "vue": "^2.6.10"
+  }
+}

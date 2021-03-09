@@ -1,4 +1,7 @@
 {
   "button": "./packages/button/index.js",
-  "table-multiple-a": "./packages/table-multiple-a/index.js"
+  "table-multiple-a": "./packages/table-multiple-a/index.js",
+  "avatar-list": "./packages/avatar-list/index.js",
+  "tree-filtration-selector": "./packages/tree-filtration-selector/index.js",
+  "tree-selector": "./packages/tree-selector/index.js"
 }
