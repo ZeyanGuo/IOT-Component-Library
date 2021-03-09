@@ -1,6 +1,6 @@
 {
   "name": "@iot-component-library/tree-selector",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "license": "MIT",
   "peerDependencies": {
