@@ -46,7 +46,7 @@ const Template = (args, { argTypes }) => ({
 export const Single = Template.bind({});
 Single.args = {
   multiple: false,
-  visible:true,
+  visible: true,
   treedata: [
     {
       "id": 1,
@@ -115,7 +115,7 @@ Single.args = {
 export const Multiple = Template.bind({});
 Multiple.args = {
   multiple: true,
-  visible:true,
+  visible: true,
   treedata: [
     {
       "id": 1,
@@ -154,65 +154,6 @@ Multiple.args = {
       "label": "党业融合部"
     }
   ],
-  resultdata: [{
-    id: "1",
-    label: "仁同1",
-    detail: "仁同1（详细信息）",
-    deletable: true
-  },
-  {
-    id: "2",
-    label: "仁同2",
-    detail: "仁同2（详细信息）",
-    deletable: false
-  },
-  {
-    id: "3",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },{
-    id: "4",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },{
-    id: "5",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },
-  {
-    id: "6",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },{
-    id: "7",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },{
-    id: "8",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },
-  {
-    id: "9",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },{
-    id: "10",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  },{
-    id: "11",
-    label: "仁同3",
-    detail: "仁同3（详细信息）",
-    deletable: false
-  }]
+  resultdata: [{ "id": 8208, "label": "马念", "detail": "马念(03903682)", "deletable": false }, { "id": 8742, "label": "王壮", "detail": "王壮(03920086)", "deletable": false }, { "id": 4528, "label": "张静", "detail": "张静(03901815)", "deletable": false }]
 }
 

@@ -46,7 +46,7 @@
       <iot-avatar-list
         :inline="true"
         @avatar-delete="avatarDelete"
-        :data="seletedData"
+        :data="value"
       ></iot-avatar-list>
     </section>
     <span slot="footer" class="dialog-footer">
@@ -110,67 +110,71 @@
     },
     data() {
       return {
-        seletedData: [],
         searchValue: "",
       };
     },
     methods: {
       handleClose() {
-        this.seletedData = [];
-        this.$emit("input", []);
         this.$emit("update:visible", false);
       },
       addAll() {
-        const valueTemp = [];
+        const valueTemp = this.value.concat([]);
         this.resultdata.forEach((node) => {
-          this.addMultipleData(node) ? valueTemp.push(node.id) : null;
+          if (
+            valueTemp
+              .map((item) => item.id)
+              .join(",")
+              .indexOf(node.id === -1)
+          ) {
+            valueTemp.push({
+              ...node,
+              deletable: true,
+            });
+          }
         });
         this.$emit("input", this.value.concat(valueTemp));
       },
       clear() {
         this.$emit("input", []);
-        this.seletedData = [];
       },
       avatarClick(node) {
         if (this.multiple) {
           // 开启多选 - 逻辑
-          this.addMultipleData(node)
-            ? this.$emit("input", this.value.concat([node.id]))
-            : null;
+          if (
+            this.value
+              .map((item) => item.id)
+              .join(",")
+              .indexOf(node.id) === -1
+          ) {
+            this.$emit(
+              "input",
+              this.value.concat([
+                {
+                  ...node,
+                  deletable: true,
+                },
+              ])
+            );
+          }
         } else {
           // 开启单选 - 逻辑
-          this.seletedData = [
-            {
-              ...node,
-              deletable: true,
-            },
-          ];
           this.$emit("input", [node.id]);
         }
       },
-      addMultipleData(node) {
-        if (this.value.join(",").indexOf(node.id) === -1) {
-          this.seletedData.push({
-            ...node,
-            deletable: true,
-          });
-          return true;
-        }
-        return false;
-      },
       avatarDelete(node) {
-        this.seletedData = this.seletedData.filter((item) => {
-          return item.id !== node.id;
-        });
         this.$emit(
           "input",
           this.value.filter((item) => {
-            return item !== node.id;
+            return item.id !== node.id;
           })
         );
       },
       handleCommit() {
-        this.$emit("commit", this.value, this.seletedData);
+        this.$emit(
+          "commit",
+          this.value.map((item) => item.id),
+          this.value
+        );
       },
       handleSearch() {
         this.$emit("search", this.searchValue);
