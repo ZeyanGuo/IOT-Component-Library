@@ -156,14 +156,6 @@
               ])
             );
           }
-          console.log(
-            this.value,
-            node.id,
-            this.value
-              .map((item) => item.id)
-              .join(",")
-              .indexOf(node.id) === -1
-          );
         } else {
           // 开启单选 - 逻辑
           this.$emit("input", [node.id]);
