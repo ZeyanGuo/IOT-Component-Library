@@ -1,7 +1,16 @@
 import IotButton from "@iot-component-library/button";
 import IotTableMultipleA from "@iot-component-library/table-multiple-a";
+import IotTreeFiltrationSelector from "@iot-component-library/tree-filtration-selector";
+import IotTreeSelector from "@iot-component-library/tree-selector";
+import IotAvatarList from "@iot-component-library/avatar-list";
 
-const components = [IotButton, IotTableMultipleA];
+const components = [
+  IotButton,
+  IotTableMultipleA,
+  IotTreeFiltrationSelector,
+  IotTreeSelector,
+  IotAvatarList,
+];
 
 const install = function (Vue) {
   components.forEach((component) => {
@@ -18,4 +27,7 @@ export default {
   install,
   IotButton,
   IotTableMultipleA,
+  IotTreeFiltrationSelector,
+  IotTreeSelector,
+  IotAvatarList,
 };
