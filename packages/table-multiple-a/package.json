@@ -1,6 +1,10 @@
 {
   "name": "@iot-component-library/table-multiple-a",
+<<<<<<< HEAD
   "version": "0.0.11",
+=======
+  "version": "0.0.10",
+>>>>>>> ed10e6d3fafdbfdbc66d34ecd5b49bd064c43668
   "main": "dist/index.js",
   "license": "MIT",
   "peerDependencies": {
