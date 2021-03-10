@@ -45,8 +45,11 @@ const Template = (args, { argTypes }) => ({
 
 export const Single = Template.bind({});
 Single.args = {
+  value: [],
   multiple: false,
   visible: true,
+  treeplaceholder: "输入信息",
+  searchplaceholder: "输入信息",
   treedata: [
     {
       "id": 1,
@@ -114,8 +117,11 @@ Single.args = {
 }
 export const Multiple = Template.bind({});
 Multiple.args = {
+  value: [],
   multiple: true,
   visible: true,
+  treeplaceholder: "输入信息",
+  searchplaceholder: "输入信息",
   treedata: [
     {
       "id": 1,
