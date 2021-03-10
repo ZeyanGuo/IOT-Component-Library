@@ -1,6 +1,6 @@
 {
   "name": "@iot-component-library/bundle",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "dist/index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -8,7 +8,7 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@iot-component-library/button": "^0.0.7",
-    "@iot-component-library/table-multiple-a": "^0.0.7"
+    "@iot-component-library/button": "^0.0.8",
+    "@iot-component-library/table-multiple-a": "^0.0.8"
   }
 }
