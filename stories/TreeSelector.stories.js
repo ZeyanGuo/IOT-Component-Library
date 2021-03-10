@@ -5,12 +5,20 @@ export default {
   component: IotTreeSelector,
   argTypes: {
     placeholder: {
-      control: {type: "text"}
+      description: "搜索栏placeholder信息",
+      default: "",
+      control: {
+        type: "text"
+      }
     },
     loading: {
-      control: {type: "boolean"}
+      description: "控制loading状态显隐",
+      default: false,
+      control: { type: "boolean" }
     },
     data: {
+      description: "所需展示的数据信息",
+      default: false,
       control: { type: "object" }
     },
     onNodeClick: { actions: 'clicked' }

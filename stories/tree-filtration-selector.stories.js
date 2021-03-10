@@ -3,35 +3,51 @@ import IotTreeFiltrationSelector from '@iot-component-library/tree-filtration-se
 export default {
   title: "IOTLIB/Tree-Filtration-Selector",
   component: IotTreeFiltrationSelector,
+ 
   argTypes: {
+    visible: {
+      description: "控制是否显隐，通过v-bind:visible.sync进行绑定",
+      default: false,
+    },
     value: {
-      control: { type: "object" }
+      description: "最终选择项，通过v-model进行绑定",
+      default: [],
     },
     multiple: {
-      control: { type: "boolean" }
-    },
-    visible: {
+      description: "是否开启多选，true: 开启多选 / false: 开启单选",
+      default: false,
       control: { type: "boolean" }
     },
     treedata: {
+      description: "控制弹出框左侧树形列表数据",
+      default: [],
       control: { type: "object" }
     },
     treeplaceholder: {
+      description: "左侧树形搜索框placeholder信息",
+      default: "",
       control: { type: "text" }
     },
     resultdata: {
+      description: "右侧搜索结果数据",
+      default: [],
       control: { type: "object" }
     },
     searchplaceholder: {
+      description: "右侧搜索框placeholder信息",
+      default: [],
       control: { type: "text" }
     },
-    onTreeNodeClick: {
+    onNodeClick: {
+      description: "树形列表节点点击事件，使用v-on:node-click进行绑定",
       control: { actions: "clicked" }
     },
     onCommit: {
+      description: "弹出框确定按钮点击事件，使用v-on:commit进行绑定",
       control: { actions: "clicked" }
     },
     onSearch: {
+      description: "右侧搜索框change事件，使用v-on:search进行绑定",
       control: { actions: "clicked" }
     }
   }
@@ -40,14 +56,23 @@ export default {
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { IotTreeFiltrationSelector },
-  template: '<iot-tree-filtration-selector :visible.sync="visible" v-model="value" @node-click="onTreeNodeClick" @commit="onCommit" @search="onSearch" v-bind="$props" />',
+  data(){
+    return{
+      p_value: [],
+      p_visible: false
+    }
+  },
+  template: `
+    <div>
+      <el-button @click="p_visible = true">点击显示</el-button>
+      <iot-tree-filtration-selector :visible.sync="p_visible" v-model="p_value" @node-click="onNodeClick" @commit="onCommit" @search="onSearch" v-bind="$props" />
+    </div>
+  `,
 });
 
 export const Single = Template.bind({});
 Single.args = {
-  value: [],
   multiple: false,
-  visible: true,
   treeplaceholder: "输入信息",
   searchplaceholder: "输入信息",
   treedata: [
@@ -117,9 +142,7 @@ Single.args = {
 }
 export const Multiple = Template.bind({});
 Multiple.args = {
-  value: [],
   multiple: true,
-  visible: true,
   treeplaceholder: "输入信息",
   searchplaceholder: "输入信息",
   treedata: [

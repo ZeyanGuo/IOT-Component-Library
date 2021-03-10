@@ -6,15 +6,25 @@ export default {
   component: IotAvatarList,
   argTypes: {
     inline: {
+      description: "是否跨行显示，true：行内模式展示 / false：块级模式展示",
+      default: false,
       control: { type: "boolean" }
     },
     data: {
+      description: "所需要展示的信息，信息允许设置deletable以显隐删除按钮",
+      default: false,
       control: {
         type: "object"
       }
     },
-    onAvatarDelete: { actions: 'clicked' },
-    onAvatarClick: { actions: 'clicked' }
+    onAvatarDelete: { 
+      description: "点击删除按钮触发的点击事件，使用v-on:avatar-delete进行绑定",
+      actions: 'clicked'
+    },
+    onAvatarClick: { 
+      description: "点击数据项触发的点击事件，使用v-on:avatar-click进行绑定",
+      actions: 'clicked'
+    }
   }
 }
 
