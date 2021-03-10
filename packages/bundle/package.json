@@ -1,6 +1,6 @@
 {
   "name": "@iot-component-library/bundle",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "dist/index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -8,10 +8,10 @@
     "vue": "^2.6.10"
   },
   "dependencies": {
-    "@iot-component-library/avatar-list": "^0.0.9",
-    "@iot-component-library/button": "^0.0.9",
-    "@iot-component-library/table-multiple-a": "^0.0.9",
-    "@iot-component-library/tree-filtration-selector": "^0.0.9",
-    "@iot-component-library/tree-selector": "^0.0.9"
+    "@iot-component-library/avatar-list": "^0.0.10",
+    "@iot-component-library/button": "^0.0.10",
+    "@iot-component-library/table-multiple-a": "^0.0.10",
+    "@iot-component-library/tree-filtration-selector": "^0.0.10",
+    "@iot-component-library/tree-selector": "^0.0.10"
   }
 }
