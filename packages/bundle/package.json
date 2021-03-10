@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@iot-component-library/button": "^0.0.8",
-    "@iot-component-library/table-multiple-a": "^0.0.8"
+    "@iot-component-library/table-multiple-a": "^0.0.8",
+    "@iot-component-library/tree-filtration-selector": "^0.0.8",
+    "@iot-component-library/tree-selector": "^0.0.8",
+    "@iot-component-library/avatar-list": "^0.0.8"
   }
 }
