@@ -118,13 +118,13 @@
         this.$emit("update:visible", false);
       },
       addAll() {
-        const valueTemp = this.value.concat([]);
+        const valueTemp = [];
         this.resultdata.forEach((node) => {
           if (
-            valueTemp
+            this.value
               .map((item) => item.id)
               .join(",")
-              .indexOf(node.id === -1)
+              .indexOf(node.id) === -1
           ) {
             valueTemp.push({
               ...node,
